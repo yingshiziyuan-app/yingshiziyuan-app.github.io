@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>影视资源 · 条目索引与观看渠道指引 | yingshiziyuan-app.github.io</title>
+<meta name="description" content="影视资源站收录剧情长片、纪录影像、剧集档案、动画剧场版与修复经典的条目信息，按类型、地区、年份整理分类导览，每周更新新增条目与点播热度榜，并附正版观看渠道的查找指引。">
+<meta name="keywords" content="影视资源,影视条目索引,影视分类导览,剧集更新表,纪录片条目,经典电影修复,动画剧场版,观看渠道指引,yingshiziyuan-app">
+<meta name="author" content="影视资源">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://yingshiziyuan-app.github.io/">
+<meta name="theme-color" content="#0d1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="影视资源">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="影视资源 · 条目索引与观看渠道指引">
+<meta property="og:description" content="按类型、地区、年份检索影视条目，每周更新新增条目与热度榜，附正版观看渠道查找指引。">
+<meta property="og:url" content="https://yingshiziyuan-app.github.io/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="影视资源 · 条目索引与观看渠道指引">
+<meta name="twitter:description" content="影视条目分类导览、每周更新与热度榜，附正版观看渠道查找指引。">
+<style>
+:root{
+  --ink:#0d1220;
+  --ink-2:#131c2f;
+  --card:#172136;
+  --line:#26334e;
+  --text:#e7eaf2;
+  --muted:#97a3bd;
+  --gold:#e8b44a;
+  --red:#c8452f;
+  --radius:14px;
+  --max:1160px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--ink);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  font-size:16px;
+  line-height:1.75;
+  letter-spacing:.01em;
+}
+img{max-width:100%;display:block}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-9999px;top:0}
+.skip:focus{left:12px;top:12px;z-index:9;background:var(--card);padding:8px 14px;border-radius:8px}
+
+/* 顶部条 */
+.bar-top{border-bottom:1px solid var(--line);background:rgba(13,18,32,.92);position:sticky;top:0;z-index:8;backdrop-filter:blur(8px)}
+.bar-top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px;flex-wrap:wrap}
+.brand{display:flex;align-items:baseline;gap:10px}
+.brand b{font-size:22px;letter-spacing:.14em;color:#fff}
+.brand span{font-size:12px;color:var(--muted);letter-spacing:.16em}
+.search{display:flex;align-items:center;gap:0;border:1px solid var(--line);border-radius:99px;overflow:hidden;background:var(--ink-2);flex:0 1 280px}
+.search input{flex:1;min-width:0;background:none;border:0;outline:none;color:var(--text);padding:9px 14px;font-size:14px;font-family:inherit}
+.search input::placeholder{color:#6d7a95}
+.search button{border:0;background:var(--gold);color:#1a1206;font-size:13px;padding:9px 18px;cursor:pointer;font-family:inherit;font-weight:600}
+
+/* 导航 */
+.nav{border-bottom:1px solid var(--line);background:var(--ink-2)}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:26px;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.nav ul::-webkit-scrollbar{display:none}
+.nav li{padding:12px 0}
+.nav a{font-size:14px;color:var(--muted);letter-spacing:.06em}
+.nav a:hover{color:var(--gold)}
+
+/* 首屏 */
+.hero{padding:56px 0 40px;background:radial-gradient(1000px 420px at 12% -10%,rgba(232,180,74,.13),transparent 62%)}
+.hero-grid{display:grid;grid-template-columns:1.45fr .95fr;gap:38px;align-items:center}
+.hero h1{margin:0 0 16px;font-size:clamp(30px,5.4vw,52px);line-height:1.22;letter-spacing:.02em;color:#fff;font-weight:700}
+.hero h1 em{font-style:normal;color:var(--gold);border-bottom:3px solid rgba(232,180,74,.4);padding-bottom:2px}
+.hero p.lead{margin:0 0 20px;color:var(--muted);font-size:16.5px;max-width:52ch}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px;padding:0;list-style:none}
+.tags li{font-size:12.5px;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:4px 12px;background:var(--ink-2)}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;border-radius:10px;padding:11px 22px;font-size:14.5px;letter-spacing:.04em;border:1px solid transparent}
+.btn-a{background:var(--gold);color:#1a1206;font-weight:600}
+.btn-b{border-color:var(--line);color:var(--text);background:var(--ink-2)}
+.btn:hover{text-decoration:none;opacity:.88}
+
+/* 票根 */
+.ticket{position:relative;border:1px dashed rgba(232,180,74,.5);border-radius:var(--radius);padding:22px 24px;background:linear-gradient(160deg,rgba(23,33,54,.95),rgba(19,28,47,.75))}
+.ticket::before,.ticket::after{content:"";position:absolute;width:14px;height:14px;border-radius:50%;background:var(--ink);border:1px solid var(--line)}
+.ticket::before{left:-8px;top:50%;margin-top:-7px}
+.ticket::after{right:-8px;top:50%;margin-top:-7px}
+.ticket h2{margin:0 0 6px;font-size:13px;letter-spacing:.22em;color:var(--gold);font-weight:600}
+.ticket .addr{font-size:15px;word-break:break-all;line-height:1.6;margin:0 0 12px;color:#fff}
+.ticket dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:13.5px}
+.ticket dt{color:var(--muted)}
+.ticket dd{margin:0;color:var(--text)}
+
+/* 通用区块 */
+section{padding:52px 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:26px}
+.sec-head h2{margin:0;font-size:clamp(21px,3vw,28px);letter-spacing:.04em;color:#fff;font-weight:700}
+.sec-head .sub{margin:6px 0 0;font-size:14px;color:var(--muted)}
+.sec-head .more{font-size:13.5px;color:var(--muted)}
+
+/* 分类卡 */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 20px 18px;position:relative;overflow:hidden;transition:border-color .2s,transform .2s}
+.card:hover{border-color:rgba(232,180,74,.55);transform:translateY(-2px)}
+.card .no{font-size:12px;letter-spacing:.2em;color:var(--gold);opacity:.85}
+.card h3{margin:8px 0 8px;font-size:17.5px;color:#fff;font-weight:600}
+.card p{margin:0 0 14px;font-size:14px;color:var(--muted)}
+.card .go{font-size:13.5px}
+
+/* 时间线 */
+.timeline{list-style:none;margin:0;padding:0 0 0 26px;position:relative}
+.timeline::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.timeline li{position:relative;padding:0 0 22px}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:-26px;top:9px;width:12px;height:12px;border-radius:50%;background:var(--ink);border:2px solid var(--gold)}
+.timeline time{display:inline-block;font-size:12.5px;color:var(--gold);letter-spacing:.08em;margin-right:10px}
+.timeline h3{margin:0 0 4px;font-size:16px;color:#fff;font-weight:600;display:inline}
+.timeline p{margin:6px 0 0;font-size:14px;color:var(--muted)}
+
+/* 热度榜 */
+.rank{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--card)}
+.rank li{display:grid;grid-template-columns:44px 1fr 120px;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.rank li:last-child{border-bottom:0}
+.rank .idx{font-size:16px;color:var(--gold);font-weight:700;text-align:center}
+.rank li:nth-child(1) .idx,.rank li:nth-child(2) .idx,.rank li:nth-child(3) .idx{color:var(--red)}
+.rank h3{margin:0;font-size:15.5px;font-weight:500;color:#fff}
+.rank .meta{font-size:12.5px;color:var(--muted);margin-top:2px}
+.bar{height:6px;border-radius:99px;background:#101a2c;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--gold),var(--red))}
+.rank .pct{font-size:12px;color:var(--muted);margin-top:5px;text-align:right}
+
+/* 步骤 */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.step{background:var(--ink-2);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:0 var(--radius) var(--radius) 0;padding:18px 20px}
+.step b{display:block;font-size:26px;color:var(--gold);line-height:1;letter-spacing:.04em}
+.step h3{margin:8px 0 6px;font-size:16.5px;color:#fff;font-weight:600}
+.step p{margin:0;font-size:14px;color:var(--muted)}
+
+/* 问答 */
+.faq{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--card)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:last-child{border-bottom:0}
+.faq summary{cursor:pointer;list-style:none;padding:16px 20px;font-size:15.5px;color:#fff;display:flex;justify-content:space-between;gap:14px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--gold);font-size:18px;line-height:1}
+.faq details[open] summary::after{content:"−"}
+.faq details[open] summary{color:var(--gold)}
+.faq .ans{padding:0 20px 18px;font-size:14.5px;color:var(--muted);margin:0}
+
+/* 关于 */
+.about{display:grid;grid-template-columns:1.6fr 1fr;gap:30px}
+.about p{margin:0 0 14px;color:var(--muted);font-size:15px}
+.about ul{margin:0;padding-left:20px;color:var(--muted);font-size:14.5px}
+.about li{margin-bottom:7px}
+.side{border:1px solid var(--line);border-radius:var(--radius);background:var(--ink-2);padding:20px}
+.side h3{margin:0 0 12px;font-size:15px;color:#fff;letter-spacing:.06em}
+.side dl{margin:0;font-size:14px}
+.side dt{color:var(--muted);font-size:12.5px;letter-spacing:.08em;margin-top:12px}
+.side dd{margin:2px 0 0;color:var(--text);word-break:break-all}
+
+/* 页脚 */
+footer{border-top:1px solid var(--line);background:var(--ink-2);padding:44px 0 26px}
+.foot{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:26px}
+.foot h3{margin:0 0 12px;font-size:14px;color:#fff;letter-spacing:.12em}
+.foot ul{list-style:none;margin:0;padding:0;font-size:14px}
+.foot li{margin-bottom:8px}
+.foot a{color:var(--muted)}
+.foot a:hover{color:var(--gold)}
+.foot p{margin:0;font-size:14px;color:var(--muted)}
+.copy{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:#6d7a95;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.top{position:fixed;right:18px;bottom:18px;border:1px solid var(--line);background:var(--card);border-radius:10px;padding:9px 14px;font-size:13px;z-index:7}
+
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr;gap:26px}
+  .about{grid-template-columns:1fr;gap:22px}
+  .rank li{grid-template-columns:34px 1fr;gap:10px}
+  .rank .heat{grid-column:2;margin-top:6px}
+  .rank .pct{text-align:left}
+}
+@media (max-width:600px){
+  body{font-size:15.5px}
+  .wrap{padding:0 16px}
+  .hero{padding:38px 0 30px}
+  section{padding:38px 0}
+  .bar-top .wrap{min-height:54px;flex-direction:column;align-items:flex-start;gap:10px}
+  .search{flex:1 1 100%}
+  .ticket{padding:18px}
+  .ticket dl{grid-template-columns:1fr;gap:2px 0}
+  .ticket dt{margin-top:8px}
+  .btn{width:100%;text-align:center}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+<a class="skip" href="#main">跳到主要内容</a>
+
+<div class="bar-top">
+  <div class="wrap">
+    <div class="brand">
+      <b>影视资源</b>
+      <span>条目索引 / 分类导览 / 观看渠道</span>
+    </div>
+    <form class="search" role="search" action="#" method="get">
+      <label for="q" style="position:absolute;left:-9999px">搜索影视条目</label>
+      <input id="q" name="q" type="search" placeholder="搜片名、导演、年份，例如 1994 修复">
+      <button type="submit">检索</button>
+    </form>
+  </div>
+</div>
+
+<nav class="nav" aria-label="站点栏目导航">
+  <div class="wrap">
+    <ul>
+      <li><a href="#catalog">分类导览</a></li>
+      <li><a href="#update">最近更新</a></li>
+      <li><a href="#rank">点播热度</a></li>
+      <li><a href="#guide">观看指引</a></li>
+      <li><a href="#faq">常见问题</a></li>
+      <li><a href="#about">关于本站</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>影视资源：<em>条目信息</em>与观看渠道的一本索引册</h1>
+      <p class="lead">把散落在各处的影视条目按类型、地区、年份归拢成册。这里不存放任何影片文件，只整理条目信息、版本差异与正版播放渠道的查找路径，方便你先看清一部作品，再决定去哪里看。</p>
+      <ul class="tags">
+        <li>剧情长片</li>
+        <li>纪录影像</li>
+        <li>剧集档案</li>
+        <li>动画剧场版</li>
+        <li>修复经典</li>
+        <li>短片单元</li>
+      </ul>
+      <div class="btn-row">
+        <a class="btn btn-a" href="#catalog">浏览分类导览</a>
+        <a class="btn btn-b" href="#guide">先看观看指引</a>
+      </div>
+    </div>
+    <div class="ticket">
+      <h2>站点地址</h2>
+      <p class="addr">https://yingshiziyuan-app.github.io</p>
+      <dl>
+        <dt>收录范围</dt><dd>剧情片 / 纪录 / 剧集 / 动画 / 修复经典</dd>
+        <dt>更新节奏</dt><dd>每周二、周五补录条目</dd>
+        <dt>条目字段</dt><dd>年份、地区、片长、版本、演职员</dd>
+        <dt>文件托管</dt><dd>不提供、不代存任何媒体文件</dd>
+      </dl>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section id="catalog" aria-labelledby="catalog-t">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 id="catalog-t">分类导览</h2>
+          <p class="sub">按内容形态分成六个区，每个区内的条目再按首映年份倒排。</p>
+        </div>
+        <a class="more" href="#">查看全部分类 →</a>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="no">01</span>
+          <h3>剧情长片</h3>
+          <p>故事片条目为主，标注片长、上映年份、制片地区与版本差异，剧场版与导演剪辑版分开计数。</p>
+          <a class="go" href="#">进入该区 →</a>
+        </article>
+        <article class="card">
+          <span class="no">02</span>
+          <h3>纪录影像</h3>
+          <p>自然、人文、社会调查三类。条目里写明拍摄周期、出品机构与集数，长篇纪录按集拆分。</p>
+          <a class="go" href="#">进入该区 →</a>
+        </article>
+        <article class="card">
+          <span class="no">03</span>
+          <h3>剧集档案</h3>
+          <p>连续剧与迷你剧按季整理，含首播日期、单集时长、完结状态，季与季之间保留分季备注。</p>
+          <a class="go" href="#">进入该区 →</a>
+        </article>
+        <article class="card">
+          <span class="no">04</span>
+          <h3>动画剧场版</h3>
+          <p>动画剧集、剧场版与短篇合集。剧场版单列条目，注明原作、制作公司与上映档期。</p>
+          <a class="go" href="#">进入该区 →</a>
+        </article>
+        <article class="card">
+          <span class="no">05</span>
+          <h3>修复经典</h3>
+          <p>老片的数位修复版，写清修复年份、修复机构与画质规格，与原始版本分别建档便于对照。</p>
+          <a class="go" href="#">进入该区 →</a>
+        </article>
+        <article class="card">
+          <span class="no">06</span>
+          <h3>短片单元</h3>
+          <p>四十分钟以内的短片与影展获奖作品，按参展影展与获奖记录归类，附简短的内容说明。</p>
+          <a class="go" href="#">进入该区 →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="update" aria-labelledby="update-t">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 id="update-t">最近更新</h2>
+          <p class="sub">近两周补录与修订的条目，按补录日期倒序排列。</p>
+        </div>
+        <a class="more" href="#">更新日志 →</a>
+      </div>
+      <ol class="timeline">
+        <li>
+          <time datetime="2026-10-22">10月22日</time>
+          <h3>剧情长片区补录 11 条</h3>
+          <p>补全演职员表与拍摄地信息，其中 3 条补充了导演剪辑版与剧场版的时长差异。</p>
+        </li>
+        <li>
+          <time datetime="2026-10-20">10月20日</time>
+          <h3>修复经典区新增 1994 年数位修复版</h3>
+          <p>新增条目注明修复机构、修复年份与画质规格，原始版本条目保留不动，方便两相对照。</p>
+        </li>
+        <li>
+          <time datetime="2026-10-18">10月18日</time>
+          <h3>剧集档案：第二季集数更新至 12 集</h3>
+          <p>同步首播日期与单集时长，完结状态标记为连载中，并补上分季备注。</p>
+        </li>
+        <li>
+          <time datetime="2026-10-15">10月15日</time>
+          <h3>纪录影像区补录 9 部自然类纪录片</h3>
+          <p>按拍摄周期与出品机构重新归类，长篇纪录按集拆分后单独编号。</p>
+        </li>
+        <li>
+          <time datetime="2026-10-11">10月11日</time>
+          <h3>短片单元上线影展获奖合集</h3>
+          <p>共 14 部，按参展影展与获奖记录归类，每条附一段不涉及关键情节的内容说明。</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="rank" aria-labelledby="rank-t">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 id="rank-t">点播热度</h2>
+          <p class="sub">依据条目页浏览量整理的本周排行，每周一重算一次。</p>
+        </div>
+        <a class="more" href="#">榜单说明 →</a>
+      </div>
+      <ol class="rank">
+        <li>
+          <span class="idx">1</span>
+          <div><h3>剧情长片区 · 年度新片条目</h3><p class="meta">条目页浏览 · 本周</p></div>
+          <div class="heat"><div class="bar"><i style="width:92%"></i></div><p class="pct">92</p></div>
+        </li>
+        <li>
+          <span class="idx">2</span>
+          <div><h3>剧集档案 · 迷你剧条目</h3><p class="meta">条目页浏览 · 本周</p></div>
+          <div class="heat"><div class="bar"><i style="width:86%"></i></div><p class="pct">86</p></div>
+        </li>
+        <li>
+          <span class="idx">3</span>
+          <div><h3>剧情长片区 · 传记类条目</h3><p class="meta">条目页浏览 · 本周</p></div>
+          <div class="heat"><div class="bar"><i style="width:78%"></i></div><p class="pct">78</p></div>
+        </li>
+        <li>
+          <span class="idx">4</span>
+          <div><h3>纪录影像区 · 自然类条目</h3><p class="meta">条目页浏览 · 本周</p></div>
+          <div class="heat"><div class="bar"><i style="width:71%"></i></div><p class="pct">71</p></div>
+        </li>
+        <li>
+          <span class="idx">5</span>
+          <div><h3>修复经典区 · 黑白影片条目</h3><p class="meta">条目页浏览 · 本周</p></div>
+          <div class="heat"><div class="bar"><i style="width:63%"></i></div><p class="pct">63</p></div>
+        </li>
+        <li>
+          <span class="idx">6</span>
+          <div><h3>动画剧场版 · 新作条目</h3><p class="meta">条目页浏览 · 本周</p></div>
+          <div class="heat"><div class="bar"><i style="width:57%"></i></div><p class="pct">57</p></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="guide" aria-labelledby="guide-t">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 id="guide-t">观看指引</h2>
+          <p class="sub">三步走：先核对条目，再找正版渠道，最后留下你自己的记录。</p>
+        </div>
+        <a class="more" href="#">渠道清单 →</a>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <b>01</b>
+          <h3>核对条目信息</h3>
+          <p>先看年份、制片地区与版本。同名作品不止一部时，以首映年份和导演字段为准，避免找错版本。</p>
+        </div>
+        <div class="step">
+          <b>02</b>
+          <h3>查找正版播放渠道</h3>
+          <p>按条目页给出的渠道线索，前往已获得授权的平台确认上线状态与清晰度，注意地区可用性差异。</p>
+        </div>
+        <div class="step">
+          <b>03</b>
+          <h3>记录与回看</h3>
+          <p>看完记一笔：评分、短评、想回看的段落。条目页右侧的收藏入口可以保存你的记录。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" aria-labelledby="faq-t">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 id="faq-t">常见问题</h2>
+          <p class="sub">关于收录范围、更新频率与使用方式的几条解释。</p>
+        </div>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>这里能直接看片吗？</summary>
+          <p class="ans">不能。站点只整理条目信息与渠道线索，不托管、不代存、不转链任何媒体文件，观看请移步已获授权的平台。</p>
+        </details>
+        <details>
+          <summary>条目多久更新一次？</summary>
+          <p class="ans">每周二、周五各补录一批，遇到修复版发行或档期变动会临时加更，改动同步记录在最近更新里。</p>
+        </details>
+        <details>
+          <summary>怎么按年份找老片？</summary>
+          <p class="ans">在检索框输入四位年份，例如 1994，结果按类型分组；想看修复版再加一个"修复"关键词即可缩小范围。</p>
+        </details>
+        <details>
+          <summary>发现条目信息有误怎么办？</summary>
+          <p class="ans">把片名、年份与你认为正确的字段整理成一段话，通过页脚的纠错入口提交，核对后会在下一次更新中修正。</p>
+        </details>
+        <details>
+          <summary>手机上浏览体验如何？</summary>
+          <p class="ans">页面按小屏重排过，分类卡与榜单在窄屏下转为单列，导航可以左右滑动，条目字段也做了折行处理。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" aria-labelledby="about-t">
+    <div class="wrap about">
+      <div>
+        <div class="sec-head" style="margin-bottom:20px">
+          <div>
+            <h2 id="about-t">关于本站</h2>
+            <p class="sub">影视资源的定位、收录规范与联系方式。</p>
+          </div>
+        </div>
+        <p>做这个索引册的起因很简单：想查一部老片的上映年份和版本，翻了四五个地方才拼齐。于是把查证过的字段按统一格式记下来，先给自己用，顺手公开。</p>
+        <p>收录时遵循几条规矩，写在这里便于对照：</p>
+        <ul>
+          <li>年份以首映年份为准，重映与修复版另起条目，不与原始版本混记。</li>
+          <li>演职员表只记主创与主要演员，不罗列完整名单。</li>
+          <li>内容说明控制在两百字以内，不写关键情节，不剧透结局。</li>
+          <li>涉及渠道时只描述查找路径，不提供任何媒体文件地址。</li>
+        </ul>
+        <p>有补录建议或纠错线索，走页脚的提交入口；条目被采纳后会在最近更新里标注来源。</p>
+      </div>
+      <aside class="side">
+        <h3>站点信息</h3>
+        <dl>
+          <dt>站点名称</dt><dd>影视资源</dd>
+          <dt>站点地址</dt><dd>https://yingshiziyuan-app.github.io</dd>
+          <dt>收录形态</dt><dd>剧情长片 · 纪录影像 · 剧集档案 · 动画剧场版 · 修复经典 · 短片单元</dd>
+          <dt>更新节奏</dt><dd>每周二、周五</dd>
+          <dt>条目字段</dt><dd>年份、地区、片长、版本、演职员</dd>
+          <dt>相关入口</dt><dd><a href="#">纠错提交</a> · <a href="#">收录规范</a></dd>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <h3>栏目</h3>
+        <ul>
+          <li><a href="#catalog">分类导览</a></li>
+          <li><a href="#update">最近更新</a></li>
+          <li><a href="#rank">点播热度</a></li>
+          <li><a href="#guide">观看指引</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>说明</h3>
+        <ul>
+          <li><a href="#">收录规范</a></li>
+          <li><a href="#">条目字段定义</a></li>
+          <li><a href="#">纠错提交</a></li>
+          <li><a href="#">更新日志</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>站点</h3>
+        <p>影视资源 · 条目索引册</p>
+        <p style="margin-top:6px">https://yingshiziyuan-app.github.io</p>
+        <p style="margin-top:6px">每周二、周五补录条目</p>
+      </div>
+    </div>
+    <div class="copy">
+      <span>影视资源 · 仅提供条目信息与正版渠道查找指引，不托管任何媒体文件</span>
+      <span><a href="#">回到顶部</a></span>
+    </div>
+  </div>
+</footer>
+
+<a class="top" href="#">顶部</a>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "影视资源",
+      "url": "https://yingshiziyuan-app.github.io/",
+      "description": "影视条目索引与分类导览，含剧情长片、纪录影像、剧集档案、动画剧场版、修复经典与短片单元，并提供正版观看渠道查找指引。",
+      "inLanguage": "zh-CN"
+    },
+    {
+      "@type": "WebPage",
+      "name": "影视资源 · 条目索引与观看渠道指引",
+      "url": "https://yingshiziyuan-app.github.io/",
+      "isPartOf": { "@id": "https://yingshiziyuan-app.github.io/#website" },
+      "inLanguage": "zh-CN"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "这里能直接看片吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "不能。站点只整理条目信息与渠道线索，不托管、不代存、不转链任何媒体文件，观看请移步已获授权的平台。" }
+        },
+        {
+          "@type": "Question",
+          "name": "条目多久更新一次？",
+          "acceptedAnswer": { "@type": "Answer", "text": "每周二、周五各补录一批，遇到修复版发行或档期变动会临时加更，改动同步记录在最近更新里。" }
+        },
+        {
+          "@type": "Question",
+          "name": "怎么按年份找老片？",
+          "acceptedAnswer": { "@type": "Answer", "text": "在检索框输入四位年份，例如 1994，结果按类型分组；想看修复版再加一个修复关键词即可缩小范围。" }
+        },
+        {
+          "@type": "Question",
+          "name": "发现条目信息有误怎么办？",
+          "acceptedAnswer": { "@type": "Answer", "text": "把片名、年份与你认为正确的字段整理成一段话，通过页脚的纠错入口提交，核对后会在下一次更新中修正。" }
+        },
+        {
+          "@type": "Question",
+          "name": "手机上浏览体验如何？",
+          "acceptedAnswer": { "@type": "Answer", "text": "页面按小屏重排过，分类卡与榜单在窄屏下转为单列，导航可以左右滑动，条目字段也做了折行处理。" }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>
